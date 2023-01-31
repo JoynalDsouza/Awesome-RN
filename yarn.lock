@@ -10515,6 +10515,11 @@
   "resolved" "https://registry.npmjs.org/react-native-gradle-plugin/-/react-native-gradle-plugin-0.70.3.tgz"
   "version" "0.70.3"
 
+"react-native-rolling-number-ticker@^1.0.2":
+  "integrity" "sha512-owb69ryoQ9/yjU8gFz9LOo+ifK5M0tP9WrQ1v/8yPJCivKo7mE4thq35eRHUeVRKxSWSctFFkqyIfCHQnwWx+Q=="
+  "resolved" "https://registry.npmjs.org/react-native-rolling-number-ticker/-/react-native-rolling-number-ticker-1.0.2.tgz"
+  "version" "1.0.2"
+
 "react-native-web@^0.18.10":
   "integrity" "sha512-fboP7yqobJ8InSr4fP+bQ3scOtSQtUoPcR+HWasH8b/fk/RO+mWcJs/8n+lewy9WTZc2D68ha7VwRDviUshEWA=="
   "resolved" "https://registry.npmjs.org/react-native-web/-/react-native-web-0.18.12.tgz"
