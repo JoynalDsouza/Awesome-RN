@@ -19,11 +19,11 @@ const App = () => {
           <Text>Hello World</Text>
           <Text>Yayyy!!!</Text>
           <RollingNumberTicker
-            textSize={20}
-            fromNumber={1400}
+            textSize={50}
+            fromNumber={10400}
             number={12929}
-            duration={1000}
-            animationStartDelay={0}
+            duration={5000}
+            animationStartDelay={3000}
           />
         </View>
 
