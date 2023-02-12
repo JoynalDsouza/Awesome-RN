@@ -8,6 +8,7 @@ import {
   View,
 } from 'react-native';
 import RollingNumberTicker from 'react-native-rolling-number-ticker';
+import {formatIndianCurrency} from './src/utils/utilityfuctions';
 
 const App = () => {
   const [text, setText] = useState('');
@@ -39,6 +40,10 @@ const App = () => {
               let regex_num = value.replace(/^0+/, '');
               setText(regex_num);
             }}></TextInput>
+        </View>
+
+        <View>
+          <Text>{formatIndianCurrency('2210', true)}</Text>
         </View>
       </ScrollView>
     </>
