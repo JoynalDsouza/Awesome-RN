@@ -1,16 +1,16 @@
 export function formatIndianCurrency(amount, withSymbol = false) {
   const rupee = '₹';
-
   const value = amount.toString();
-
-  let lastThree = value.substring(value.length - 3);
-
-  const otherNumbers = value.substring(0, value.length - 3);
-
+  const parts = value.split('.');
+  let lastThree = parts[0].substring(parts[0].length - 3);
+  const otherNumbers = parts[0].substring(0, parts[0].length - 3);
   if (otherNumbers !== '') {
     lastThree = ',' + lastThree;
   }
-  const res = otherNumbers.replace(/\B(?=(\d{2})+(?!\d))/g, ',') + lastThree;
-
-  return withSymbol ? rupee + res : res;
+  var res = otherNumbers.replace(/\B(?=(\d{2})+(?!\d))/g, ',') + lastThree;
+  if (parts.length === 2) {
+    return withSymbol ? rupee + res + '.' + parts[1] : res + '.' + parts[1];
+  } else {
+    return withSymbol ? rupee + res : res;
+  }
 }
