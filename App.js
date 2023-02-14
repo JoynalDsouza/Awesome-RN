@@ -43,7 +43,15 @@ const App = () => {
         </View>
 
         <View>
-          <Text>{formatIndianCurrency('2210', true)}</Text>
+          <Text>{formatIndianCurrency('2210.111', true)}</Text>
+          <Text>{formatIndianCurrency(2210.111)}</Text>
+
+          <Text>
+            {Number('32932.378687').toLocaleString('en-IN', {
+              style: 'currency',
+              currency: 'INR',
+            })}
+          </Text>
         </View>
       </ScrollView>
     </>
