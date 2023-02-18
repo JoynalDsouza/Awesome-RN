@@ -10515,10 +10515,10 @@
   "resolved" "https://registry.npmjs.org/react-native-gradle-plugin/-/react-native-gradle-plugin-0.70.3.tgz"
   "version" "0.70.3"
 
-"react-native-rolling-number-ticker@^1.1.0":
-  "integrity" "sha512-08jfipLhazq/GSPRyEJT/rI3oOTLFbF0BwUOSSG8hEKaKiPAJIesmzYW3iS/RA78c6uLt+/RbYXF/o1mmVJTMQ=="
-  "resolved" "https://registry.npmjs.org/react-native-rolling-number-ticker/-/react-native-rolling-number-ticker-1.1.0.tgz"
-  "version" "1.1.0"
+"react-native-rolling-number-ticker@^1.1.4":
+  "integrity" "sha512-LFDVDUU16trR//rMC/THPmjpKPTbIJ8SOQQG8uCzDiUA5C1MjwUx8aEnejBjFZBjIVNALUObofX2rY536jlgqQ=="
+  "resolved" "https://registry.npmjs.org/react-native-rolling-number-ticker/-/react-native-rolling-number-ticker-1.1.4.tgz"
+  "version" "1.1.4"
 
 "react-native-web@^0.18.10":
   "integrity" "sha512-fboP7yqobJ8InSr4fP+bQ3scOtSQtUoPcR+HWasH8b/fk/RO+mWcJs/8n+lewy9WTZc2D68ha7VwRDviUshEWA=="
