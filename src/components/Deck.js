@@ -10,6 +10,7 @@ import {
 
 const Deck = () => {
   const fade = useRef(new Animated.Value(1)).current;
+  const translate = useRef(new Animated.Value(0)).current;
 
   const startFadeAnimation = () => {
     Animated.timing(fade, {
@@ -24,10 +25,32 @@ const Deck = () => {
       }).start();
     });
   };
+
+  const startTranslateAnimation = () => {
+    Animated.timing(translate, {
+      toValue: -300,
+      duration: 1050,
+      useNativeDriver: true,
+    }).start(() => {
+      Animated.timing(translate, {
+        toValue: 0,
+        duration: 1000,
+        useNativeDriver: true,
+      }).start();
+    });
+  };
   return (
     <View style={styles.container}>
       <TouchableWithoutFeedback onPress={() => startFadeAnimation()}>
         <Animated.View style={[styles.square, {opacity: fade}]}></Animated.View>
+      </TouchableWithoutFeedback>
+
+      <TouchableWithoutFeedback onPress={() => startTranslateAnimation()}>
+        <Animated.View
+          style={[
+            styles.square,
+            {transform: [{translateY: translate}]},
+          ]}></Animated.View>
       </TouchableWithoutFeedback>
     </View>
   );
