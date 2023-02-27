@@ -11,6 +11,7 @@ import {
 const Deck = () => {
   const fade = useRef(new Animated.Value(1)).current;
   const translate = useRef(new Animated.Value(0)).current;
+  const scale = useRef(new Animated.Value(1)).current;
 
   const startFadeAnimation = () => {
     Animated.timing(fade, {
@@ -39,9 +40,23 @@ const Deck = () => {
       }).start();
     });
   };
+
+  const startScaleAnimation = () => {
+    Animated.timing(scale, {
+      toValue: -1,
+      duration: 1050,
+      useNativeDriver: true,
+    }).start(() => {
+      Animated.timing(scale, {
+        toValue: 1,
+        duration: 1000,
+        useNativeDriver: true,
+      }).start();
+    });
+  };
   return (
     <View style={styles.container}>
-      <TouchableWithoutFeedback onPress={() => startFadeAnimation()}>
+      {/* <TouchableWithoutFeedback onPress={() => startFadeAnimation()}>
         <Animated.View style={[styles.square, {opacity: fade}]}></Animated.View>
       </TouchableWithoutFeedback>
 
@@ -51,6 +66,12 @@ const Deck = () => {
             styles.square,
             {transform: [{translateY: translate}]},
           ]}></Animated.View>
+      </TouchableWithoutFeedback> */}
+
+      <TouchableWithoutFeedback onPress={() => startScaleAnimation()}>
+        <Animated.View style={[styles.square, {transform: [{scaleY: scale}]}]}>
+          <Text>Hello from the other side</Text>
+        </Animated.View>
       </TouchableWithoutFeedback>
     </View>
   );
