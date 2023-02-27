@@ -12,6 +12,7 @@ const Deck = () => {
   const fade = useRef(new Animated.Value(1)).current;
   const translate = useRef(new Animated.Value(0)).current;
   const scale = useRef(new Animated.Value(1)).current;
+  const color = useRef(new Animated.Value(0)).current;
 
   const startFadeAnimation = () => {
     Animated.timing(fade, {
@@ -43,7 +44,7 @@ const Deck = () => {
 
   const startScaleAnimation = () => {
     Animated.timing(scale, {
-      toValue: -1,
+      toValue: 2,
       duration: 1050,
       useNativeDriver: true,
     }).start(() => {
@@ -54,6 +55,33 @@ const Deck = () => {
       }).start();
     });
   };
+
+  const startColorAnimation = () => {
+    Animated.timing(color, {
+      toValue: 1,
+      duration: 2050,
+      useNativeDriver: true,
+    }).start(() => {
+      Animated.timing(color, {
+        toValue: 0,
+        duration: 2000,
+        useNativeDriver: true,
+      }).start();
+    });
+  };
+
+  const boxInterpolation = color.interpolate({
+    inputRange: [0, 1],
+    outputRange: ['rgb(255,99,71)', 'rgb(99,71,255)'],
+  });
+
+  const colorInterpolation = color.interpolate({
+    inputRange: [0, 1],
+    outputRange: ['rgb(99,71,255)', 'rgb(255,99,71)'],
+  });
+
+  const backgroundStyles = {backgroundColor: boxInterpolation};
+
   return (
     <View style={styles.container}>
       {/* <TouchableWithoutFeedback onPress={() => startFadeAnimation()}>
@@ -68,9 +96,17 @@ const Deck = () => {
           ]}></Animated.View>
       </TouchableWithoutFeedback> */}
 
-      <TouchableWithoutFeedback onPress={() => startScaleAnimation()}>
-        <Animated.View style={[styles.square, {transform: [{scaleY: scale}]}]}>
+      {/* <TouchableWithoutFeedback onPress={() => startScaleAnimation()}>
+        <Animated.View style={[styles.square, {transform: [{scale: scale}]}]}>
           <Text>Hello from the other side</Text>
+        </Animated.View>
+      </TouchableWithoutFeedback> */}
+
+      <TouchableWithoutFeedback onPress={() => startColorAnimation()}>
+        <Animated.View style={[styles.square, backgroundStyles]}>
+          <Animated.Text style={{color: colorInterpolation}}>
+            Hello from the other side
+          </Animated.Text>
         </Animated.View>
       </TouchableWithoutFeedback>
     </View>
@@ -86,7 +122,7 @@ const styles = StyleSheet.create({
   square: {
     width: 200,
     height: 200,
-    backgroundColor: 'red',
+    // backgroundColor: 'red',
   },
 });
 

@@ -50,7 +50,7 @@ const AnimationScreen = () => {
   ];
 
   return (
-    <View style={{flex: 1}}>
+    <View style={{flex: 1, backgroundColor: 'black'}}>
       {/* <Ball /> */}
       <Deck />
     </View>
