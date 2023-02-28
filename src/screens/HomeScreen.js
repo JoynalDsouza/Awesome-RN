@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useRef, useState} from 'react';
 import {
   Button,
   SafeAreaView,
@@ -8,6 +8,7 @@ import {
   TextInput,
   TouchableOpacity,
   View,
+  Animated,
 } from 'react-native';
 import RollingNumberTicker from 'react-native-rolling-number-ticker';
 import Ball from '../components/Ball';
@@ -15,10 +16,35 @@ import {formatIndianCurrency} from '../utils/utilityfuctions';
 
 const HomeScreen = ({navigation}) => {
   const [text, setText] = useState('');
+  const backgroundAnimated = useRef(new Animated.Value(0)).current;
+
+  const backgroundColor = backgroundAnimated.interpolate({
+    inputRange: [0, 3000],
+    outputRange: ['rgb(145,34,26)', 'rgb(234,234,23)'],
+  });
+  // const backgroundColor = 'red';
   return (
     <>
       <SafeAreaView />
-      <ScrollView contentInsetAdjustmentBehavior="automatic">
+      <Animated.ScrollView
+      // contentInsetAdjustmentBehavior="automatic"
+      // scrollEventThrottle={16}
+      // onScroll={e => {
+      //   backgroundAnimated.setValue(e.nativeEvent.contentOffset.y);
+      // }}
+      // onScroll={Animated.event(
+      //   [
+      //     {
+      //       nativeEvent: {
+      //         contentOffset: {
+      //           y: backgroundAnimated,
+      //         },
+      //       },
+      //     },
+      //   ],
+      //   {useNativeDriver: true},
+      // )}
+      >
         <View>
           <Text>Hello World</Text>
           <Text>Yayyy!!!</Text>
@@ -61,7 +87,9 @@ const HomeScreen = ({navigation}) => {
             <Text>Go to Animation</Text>
           </TouchableOpacity>
         </View>
-      </ScrollView>
+        <View
+          style={[styles.content, {backgroundColor: backgroundColor}]}></View>
+      </Animated.ScrollView>
     </>
   );
 };
@@ -70,6 +98,10 @@ const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  content: {
+    backgroundColor: 'green',
+    height: 4000,
   },
 });
 

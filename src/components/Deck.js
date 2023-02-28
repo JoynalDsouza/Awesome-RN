@@ -6,6 +6,7 @@ import {
   StyleSheet,
   TouchableWithoutFeedback,
   TouchableOpacity,
+  ScrollView,
 } from 'react-native';
 
 const Deck = () => {
@@ -125,13 +126,13 @@ const Deck = () => {
         </Animated.View>
       </TouchableWithoutFeedback> */}
 
-      <TouchableWithoutFeedback onPress={() => startScaleSpringAnimation()}>
+      {/* <TouchableWithoutFeedback onPress={() => startScaleSpringAnimation()}>
         <Animated.View
           style={[
             styles.square,
             {transform: [{scale: scale}]},
           ]}></Animated.View>
-      </TouchableWithoutFeedback>
+      </TouchableWithoutFeedback> */}
     </View>
   );
 };
@@ -140,6 +141,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
+    // backgroundColor: 'green',
     justifyContent: 'center',
   },
   square: {
