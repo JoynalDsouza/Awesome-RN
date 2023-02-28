@@ -70,6 +70,21 @@ const Deck = () => {
     });
   };
 
+  const startScaleSpringAnimation = () => {
+    Animated.spring(scale, {
+      toValue: 2,
+      tension: 160,
+      friction: 1,
+      useNativeDriver: true,
+    }).start(() => {
+      Animated.timing(scale, {
+        toValue: 1,
+        duration: 100,
+        useNativeDriver: true,
+      }).start();
+    });
+  };
+
   const boxInterpolation = color.interpolate({
     inputRange: [0, 1],
     outputRange: ['rgb(255,99,71)', 'rgb(99,71,255)'],
@@ -102,12 +117,20 @@ const Deck = () => {
         </Animated.View>
       </TouchableWithoutFeedback> */}
 
-      <TouchableWithoutFeedback onPress={() => startColorAnimation()}>
+      {/* <TouchableWithoutFeedback onPress={() => startColorAnimation()}>
         <Animated.View style={[styles.square, backgroundStyles]}>
           <Animated.Text style={{color: colorInterpolation}}>
             Hello from the other side
           </Animated.Text>
         </Animated.View>
+      </TouchableWithoutFeedback> */}
+
+      <TouchableWithoutFeedback onPress={() => startScaleSpringAnimation()}>
+        <Animated.View
+          style={[
+            styles.square,
+            {transform: [{scale: scale}]},
+          ]}></Animated.View>
       </TouchableWithoutFeedback>
     </View>
   );
@@ -120,9 +143,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   square: {
-    width: 200,
-    height: 200,
-    // backgroundColor: 'red',
+    width: 50,
+    height: 50,
+    backgroundColor: 'red',
   },
 });
 
