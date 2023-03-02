@@ -12,6 +12,7 @@ import {
 } from 'react-native';
 import RollingNumberTicker from 'react-native-rolling-number-ticker';
 import Ball from '../components/Ball';
+import Slider from '../components/Slider';
 import {formatIndianCurrency} from '../utils/utilityfuctions';
 
 const HomeScreen = ({navigation}) => {
@@ -56,6 +57,8 @@ const HomeScreen = ({navigation}) => {
             animationStartDelay={3000}
           />
         </View>
+
+        <Slider />
 
         <View>
           <TextInput
