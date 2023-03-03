@@ -13,6 +13,7 @@ import {
 import RollingNumberTicker from 'react-native-rolling-number-ticker';
 import Ball from '../components/Ball';
 import Slider from '../components/Slider';
+import SliderX from '../components/SliderX';
 import {formatIndianCurrency} from '../utils/utilityfuctions';
 
 const HomeScreen = ({navigation}) => {
@@ -77,7 +78,7 @@ const HomeScreen = ({navigation}) => {
         <View>
           <Text>{formatIndianCurrency('2210.111', true)}</Text>
           <Text>{formatIndianCurrency(2210.111)}</Text>
-
+          <SliderX />
           <Text>
             {Number('32932.378687').toLocaleString('en-IN', {
               style: 'currency',
