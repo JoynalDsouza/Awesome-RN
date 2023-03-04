@@ -9,3 +9,4 @@ Contents:
 3. added formatToIndianCurrency function
 4. Android js internationalisation support
 5. React native animations
+6. Panresponder example
