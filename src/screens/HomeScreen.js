@@ -13,6 +13,7 @@ import {
 import RollingNumberTicker from 'react-native-rolling-number-ticker';
 import Ball from '../components/Ball';
 import Slider from '../components/Slider';
+import {RatingSlider} from '../components/Slider2';
 import SliderX from '../components/SliderX';
 import {formatIndianCurrency} from '../utils/utilityfuctions';
 
@@ -59,8 +60,9 @@ const HomeScreen = ({navigation}) => {
           />
         </View>
 
-        <Slider />
+        {/* <Slider /> */}
 
+        <RatingSlider />
         <View>
           <TextInput
             style={{
