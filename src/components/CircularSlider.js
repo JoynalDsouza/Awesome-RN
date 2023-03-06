@@ -2,48 +2,48 @@ import React from 'react';
 import {PanResponder, PanResponderGestureState, View} from 'react-native';
 import Svg, {Path, Circle, G, Text} from 'react-native-svg';
 
-export type CircularSliderProps = {
-  /** Radius of Circular Slider */
-  trackRadius?: number,
-  /** Size of Thumb*/
-  thumbRadius?: number,
-  /** Size of Track */
-  trackWidth?: number,
-  /** Value between minValue to maxValue */
-  value?: number,
-  /** Minimum value */
-  minValue?: number,
-  /** Maximum value */
-  maxValue?: number,
-  /** onChange Handler */
-  onChange?: (angle: number) => any,
-  /** Color for Track  */
-  trackColor?: string,
-  /** Color for Track Tint  */
-  trackTintColor?: string,
-  /** Color for Thumb  */
-  thumbColor?: string,
-  /** Color for Text on Thumb  */
-  thumbTextColor?: string,
-  /** Font size for Text on Thumb  */
-  thumbTextSize?: number,
-  /** Show text on center of thumb  */
-  showThumbText?: boolean,
-  /** Show Thumb on Track  */
-  noThumb?: boolean,
-  /** Show text on center of circle  */
-  showText?: boolean,
-  /** Text color for center of circle  */
-  textColor?: string,
-  /** Text Size for center of circle  */
-  textSize?: number,
-  /** Maximum arc angle in degrees i.e. its range is 0 to 359  */
-  maxAngle?: number,
-  /** Minimum arc angle in degrees i.e. its range is 0 to 359  */
-  minAngle?: number,
-};
+// export type CircularSliderProps = {
+//   /** Radius of Circular Slider */
+//   trackRadius?: number,
+//   /** Size of Thumb*/
+//   thumbRadius?: number,
+//   /** Size of Track */
+//   trackWidth?: number,
+//   /** Value between minValue to maxValue */
+//   value?: number,
+//   /** Minimum value */
+//   minValue?: number,
+//   /** Maximum value */
+//   maxValue?: number,
+//   /** onChange Handler */
+//   onChange?: (angle: number) => any,
+//   /** Color for Track  */
+//   trackColor?: string,
+//   /** Color for Track Tint  */
+//   trackTintColor?: string,
+//   /** Color for Thumb  */
+//   thumbColor?: string,
+//   /** Color for Text on Thumb  */
+//   thumbTextColor?: string,
+//   /** Font size for Text on Thumb  */
+//   thumbTextSize?: number,
+//   /** Show text on center of thumb  */
+//   showThumbText?: boolean,
+//   /** Show Thumb on Track  */
+//   noThumb?: boolean,
+//   /** Show text on center of circle  */
+//   showText?: boolean,
+//   /** Text color for center of circle  */
+//   textColor?: string,
+//   /** Text Size for center of circle  */
+//   textSize?: number,
+//   /** Maximum arc angle in degrees i.e. its range is 0 to 359  */
+//   maxAngle?: number,
+//   /** Minimum arc angle in degrees i.e. its range is 0 to 359  */
+//   minAngle?: number,
+// };
 
-const CircularSlider: React.FC<CircularSliderProps> = ({
+const CircularSlider = ({
   /** prop1 description */
   thumbRadius = 12,
   trackRadius = 100,
@@ -76,7 +76,7 @@ const CircularSlider: React.FC<CircularSliderProps> = ({
       onMoveShouldSetPanResponder: () => true,
       onMoveShouldSetPanResponderCapture: () => true,
       onPanResponderGrant: () => location.current.x && location.current.y,
-      onPanResponderMove: (_e, {moveX, moveY}: PanResponderGestureState) => {
+      onPanResponderMove: (_e, {moveX, moveY}) => {
         let angle = cartesianToPolar(
           moveX - location.current.x + trackRadius + thumbRadius,
           moveY - location.current.y + trackRadius + thumbRadius,
@@ -93,7 +93,7 @@ const CircularSlider: React.FC<CircularSliderProps> = ({
   );
 
   const polarToCartesian = React.useCallback(
-    (angleToChange: number) => {
+    angleToChange => {
       let r = trackRadius;
       let hC = trackRadius + thumbRadius;
       let a = ((angleToChange - 90) * Math.PI) / 180.0;
