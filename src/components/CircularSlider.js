@@ -66,7 +66,7 @@ const CircularSlider = ({
   textSize = 80,
 }) => {
   const location = React.useRef({x: 0, y: 0});
-  const viewRef = React.useRef < View > null;
+  const viewRef = React.useRef(null);
   const valuePercentage = ((value - minValue) * 100) / maxValue;
 
   const {current: panResponder} = React.useRef(
@@ -204,6 +204,5 @@ const CircularSlider = ({
     </View>
   );
 };
-CircularSlider.defaultProps = {};
 
 export default CircularSlider;
