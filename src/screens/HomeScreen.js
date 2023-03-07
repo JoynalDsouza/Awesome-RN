@@ -12,6 +12,7 @@ import {
 } from 'react-native';
 import RollingNumberTicker from 'react-native-rolling-number-ticker';
 import Ball from '../components/Ball';
+import CircularSlider from '../components/CircularSlider';
 import Slider from '../components/Slider';
 import {RatingSlider} from '../components/Slider2';
 import SliderX from '../components/SliderX';
@@ -61,6 +62,8 @@ const HomeScreen = ({navigation}) => {
         </View>
 
         {/* <Slider /> */}
+
+        <CircularSlider />
 
         <RatingSlider />
         <View>
