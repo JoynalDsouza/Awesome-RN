@@ -1,10 +1,89 @@
-import React, {useEffect, useRef} from 'react';
-import {View, Animated} from 'react-native';
+import React, {useEffect, useRef, useState} from 'react';
+import {View, Animated, Text, PanResponder} from 'react-native';
 import Deck from '../components/Deck';
+import Slider from '../components/Slider';
 // import Ball from '../components/Ball';
 
 const AnimationScreen = () => {
   //  const moveBall = useRef(new Animated.ValueXY(0, 0)).current;
+
+  const [containerWidth, setContainerWidth] = useState(0);
+  // const containerHeight = 411;
+  const containerWidthRef = useRef(containerWidth);
+  const pan = useState(new Animated.ValueXY())[0];
+  const [rating, setRating] = useState(1);
+
+  // const containerCheck = (val)
+
+  const panResponder = useState(
+    PanResponder.create({
+      onStartShouldSetPanResponder: () => true,
+      onPanResponderGrant: () => {
+        pan.setOffset({
+          x: pan.x._value,
+          y: pan.y._value,
+        });
+      },
+      onMoveShouldSetPanResponder: (evt, gestureState) => true,
+      onPanResponderMove: (event, gestureState) => {
+        const {dx, dy} = gestureState;
+        // console.log(dx);
+        // console.log(containerWidthRef.current);
+        // const {x, y} = pan.__getValue();
+        // let nextX = x + dx;
+
+        // if (nextX < 0) {
+        //   nextX = 0;
+        // } else if (nextX > containerWidthRef.current - 50) {
+        //   nextX = containerWidthRef.current - 50;
+        // }
+
+        // if (nextY < 0) {
+        //   nextY = 0;
+        // } else if (nextY > containerHeight - 50) {
+        //   nextY = containerHeight - 50;
+        // }
+
+        pan.setValue({x: dx, y: 0});
+      },
+      // onPanResponderMove: Animated.event(
+      //   [
+      //     null,
+      //     {
+      //       dx: pan.x,
+      //       dy: pan.y,
+      //     },
+      //   ],
+      //   {useNativeDriver: false},
+      // ),
+      onPanResponderRelease: () => {
+        const {x, y} = pan.__getValue();
+        console.log(x);
+        if (x > 300) {
+          setRating(5);
+        } else if (x > 200) {
+          setRating(4);
+        } else if (x > 100) {
+          setRating(3);
+        } else if (x > 50) {
+          setRating(2);
+        } else {
+          setRating(1);
+        }
+        pan.flattenOffset();
+      },
+    }),
+  )[0];
+
+  React.useEffect(() => {
+    containerWidthRef.current = containerWidth;
+  }, [containerWidth]);
+
+  // panResponder.onPanResponderMove = (evt, gestureState) => {
+  //   console.log({ containerWidth });
+  // };
+
+  // const [panResponder, setPanResponder] = useState(pan);
 
   const DATA = [
     {
@@ -49,10 +128,84 @@ const AnimationScreen = () => {
     },
   ];
 
+  const backgroundColorInterpolate = pan.x.interpolate({
+    inputRange: [0, 100, 200, 300, 400],
+    outputRange: [
+      'rgba(247, 103, 103, 1)',
+      'rgba(235, 185, 5, 1)',
+      'rgba(74, 113, 255, 1)',
+      'rgba(156, 12, 255, 1)',
+      'rgba(52, 172, 85, 1)',
+    ],
+    // extrapolate: 'clamp',
+  });
+
   return (
     <View style={{flex: 1}}>
       {/* <Ball /> */}
-      <Deck />
+      {/* <Deck /> */}
+
+      <View
+        style={{
+          backgroundColor: 'yellow',
+          alignItems: 'center',
+          height: 24,
+          justifyContent: 'center',
+          position: 'relative',
+          marginVertical: 10,
+        }}>
+        <Animated.View
+          style={{position: 'absolute', opacity: rating === 1 ? 1 : 0}}>
+          <Text>Hello</Text>
+        </Animated.View>
+        <Animated.View
+          style={{position: 'absolute', opacity: rating === 2 ? 1 : 0}}>
+          <Text>World</Text>
+        </Animated.View>
+        <Animated.View
+          style={{position: 'absolute', opacity: rating === 3 ? 1 : 0}}>
+          <Text>oP</Text>
+        </Animated.View>
+        <Animated.View
+          style={{position: 'absolute', opacity: rating === 4 ? 1 : 0}}>
+          <Text>LeagueX</Text>
+        </Animated.View>
+        <Animated.View
+          style={{position: 'absolute', opacity: rating === 5 ? 1 : 0}}>
+          <Text>Champion</Text>
+        </Animated.View>
+      </View>
+
+      {/* <Slider /> */}
+
+      <View style={{flex: 1}}>
+        <View
+          style={{
+            width: '100%',
+            height: 50,
+            // backgroundColor: "gray",
+            position: 'relative',
+            zIndex: 2,
+          }}
+          onLayout={e => {
+            const {width} = e.nativeEvent.layout;
+            setContainerWidth(width);
+            // console.log({ width });
+          }}>
+          <Animated.View
+            style={[
+              {
+                width: 50,
+                height: 50,
+                backgroundColor: backgroundColorInterpolate,
+                position: 'absolute',
+              },
+              pan.getLayout(),
+            ]}
+            {...panResponder.panHandlers}
+          />
+        </View>
+      </View>
     </View>
   );
 };

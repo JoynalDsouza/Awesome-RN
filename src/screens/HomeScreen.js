@@ -63,7 +63,7 @@ const HomeScreen = ({navigation}) => {
 
         {/* <Slider /> */}
 
-        <CircularSlider />
+        {/* <CircularSlider /> */}
 
         <RatingSlider />
         <View>
