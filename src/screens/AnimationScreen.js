@@ -2,6 +2,7 @@ import React, {useEffect, useRef, useState} from 'react';
 import {View, Animated, Text, PanResponder} from 'react-native';
 import Deck from '../components/Deck';
 import Slider from '../components/Slider';
+import {FeedbackModalize} from '../components/Slider3';
 // import Ball from '../components/Ball';
 
 const AnimationScreen = () => {
@@ -141,7 +142,7 @@ const AnimationScreen = () => {
   });
 
   return (
-    <View style={{flex: 1}}>
+    <View style={{flex: 1, backgroundColor: 'black'}}>
       {/* <Ball /> */}
       {/* <Deck /> */}
 
@@ -206,6 +207,8 @@ const AnimationScreen = () => {
           />
         </View>
       </View>
+
+      <FeedbackModalize />
     </View>
   );
 };

@@ -1,5 +1,12 @@
 import React, {useState, useRef, useCallback} from 'react';
-import {View, Text, PanResponder, Animated} from 'react-native';
+import {
+  View,
+  Text,
+  PanResponder,
+  Animated,
+  TouchableWithoutFeedback,
+} from 'react-native';
+import {findClosestNumber} from '../utils/functions/closestNumber';
 
 const PlaceHolderRateMarks = ({width = 4, height = 8, addHeight, style}) => {
   return (
@@ -17,7 +24,7 @@ const PlaceHolderRateMarks = ({width = 4, height = 8, addHeight, style}) => {
   );
 };
 
-const FeedbackModalize = ({feedbackModalizeRef, userData = {}}) => {
+export const FeedbackModalize = ({feedbackModalizeRef, userData = {}}) => {
   const [pan, setPan] = useState(new Animated.Value(0));
 
   const [rating, setRating] = useState(1);
