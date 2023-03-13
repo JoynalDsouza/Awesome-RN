@@ -177,7 +177,7 @@ const AnimationScreen = () => {
         </Animated.View>
       </View>
 
-      {/* <Slider /> */}
+      <Slider />
 
       <View style={{flex: 1}}>
         <View

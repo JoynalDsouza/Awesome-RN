@@ -96,6 +96,12 @@ const HomeScreen = ({navigation}) => {
             <Text>Go to Animation</Text>
           </TouchableOpacity>
         </View>
+
+        <View style={styles.container}>
+          <TouchableOpacity onPress={() => navigation.navigate('Animation2')}>
+            <Text>Go to Animation2</Text>
+          </TouchableOpacity>
+        </View>
         <View
           style={[styles.content, {backgroundColor: backgroundColor}]}></View>
       </Animated.ScrollView>
