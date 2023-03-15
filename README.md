@@ -8,5 +8,5 @@ Contents:
 2. react-native-rolling-number-ticker package testing
 3. added formatToIndianCurrency function
 4. Android js internationalisation support
-5. React native animations
+5. React native animations - interpolate, transforms, nested interpolation
 6. Panresponder example
