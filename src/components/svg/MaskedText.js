@@ -49,7 +49,7 @@ const MaskedText = () => {
           id="Text"
           x="400"
           y="200"
-          fontFamily="Verdana"
+          //   fontFamily="Verdana"
           fontSize="100"
           textAnchor="middle">
           Masked text
