@@ -17,6 +17,7 @@ import Slider from '../components/Slider';
 import {RatingSlider} from '../components/Slider2';
 import SliderX from '../components/SliderX';
 import MaskedText from '../components/svg/MaskedText';
+import SliderSvg from '../components/svg/SliderSvg';
 import {formatIndianCurrency} from '../utils/utilityfuctions';
 
 const HomeScreen = ({navigation}) => {
@@ -67,6 +68,7 @@ const HomeScreen = ({navigation}) => {
         {/* <CircularSlider /> */}
         {/* <MaskedText></MaskedText> */}
         <RatingSlider />
+        <SliderSvg />
         <View>
           <TextInput
             style={{
