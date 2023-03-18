@@ -12,6 +12,7 @@ import Svg, {
 
 function SliderSvg(props) {
   const {fillColor = 'red', stroke = 'white'} = props;
+  console.log(fillColor);
   return (
     <Svg
       width={90}
@@ -40,12 +41,12 @@ function SliderSvg(props) {
           />
         </G>
         <G filter="url(#filter1_d_3239_12831)">
-          <Circle cx={45} cy={48} r={24} fill="" />
+          <Circle cx={45} cy={48} r={24} fill={fillColor} />
           <Circle
             cx={45}
             cy={48}
             r={21.4925}
-            stroke="url(#paint1_linear_3239_12831)"
+            stroke={fillColor}
             strokeWidth={5.01496}
           />
         </G>

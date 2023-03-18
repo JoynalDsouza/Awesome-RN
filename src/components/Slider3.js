@@ -7,6 +7,7 @@ import {
   TouchableWithoutFeedback,
 } from 'react-native';
 import {findClosestNumber} from '../utils/functions/closestNumber';
+import SliderSvg from './svg/SliderSvg';
 
 const PlaceHolderRateMarks = ({width = 4, height = 8, addHeight, style}) => {
   return (
@@ -87,13 +88,7 @@ export const FeedbackModalize = ({feedbackModalizeRef, userData = {}}) => {
       ratingBarViewWidth.current * 0.75,
       ratingBarViewWidth.current,
     ],
-    outputRange: [
-      'rgba(247, 103, 103, 1)',
-      'rgba(235, 185, 5, 1)',
-      'rgba(74, 113, 255, 1)',
-      'rgba(156, 12, 255, 1)',
-      'rgba(52, 172, 85, 1)',
-    ],
+    outputRange: ['#F76767', '#EBB905', '#4A71FF', '#9C0CFF', '#34AC55'],
     // extrapolate: 'clamp',
   });
 
@@ -152,7 +147,7 @@ export const FeedbackModalize = ({feedbackModalizeRef, userData = {}}) => {
               },
             ]}
             {...panResponder.panHandlers}>
-            <Animated.View
+            {/* <Animated.View
               style={{
                 backgroundColor: sliderClicked
                   ? backgroundColorInterpolate
@@ -180,7 +175,8 @@ export const FeedbackModalize = ({feedbackModalizeRef, userData = {}}) => {
                 height={22}
                 width={3}
                 style={{opacity: 1}}></PlaceHolderRateMarks>
-            </Animated.View>
+            </Animated.View> */}
+            <SliderSvg fillColor={backgroundColorInterpolate} />
           </Animated.View>
         </Animated.View>
         <View

@@ -3,6 +3,7 @@ import {View, Animated, Text, PanResponder} from 'react-native';
 import Deck from '../components/Deck';
 import Slider from '../components/Slider';
 import {FeedbackModalize} from '../components/Slider3';
+import SliderSvg from '../components/svg/SliderSvg';
 // import Ball from '../components/Ball';
 
 const AnimationScreen = () => {
@@ -203,8 +204,7 @@ const AnimationScreen = () => {
               },
               pan.getLayout(),
             ]}
-            {...panResponder.panHandlers}
-          />
+            {...panResponder.panHandlers}></Animated.View>
         </View>
       </View>
 
