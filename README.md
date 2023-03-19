@@ -11,4 +11,5 @@ Contents:
 5. React native animations - interpolate, transforms, nested interpolation
 6. Panresponder example
 7. Animated Rating Slider
-8. closestNumber binary search program 
+8. closestNumber binary search program
+9. SVG components using react native svg
