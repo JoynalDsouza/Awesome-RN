@@ -16,6 +16,7 @@ import CircularSlider from '../components/CircularSlider';
 import Slider from '../components/Slider';
 import {RatingSlider} from '../components/Slider2';
 import SliderX from '../components/SliderX';
+import BGSvg from '../components/svg/BGSvg';
 import MaskedText from '../components/svg/MaskedText';
 import SliderSvg from '../components/svg/SliderSvg';
 import {formatIndianCurrency} from '../utils/utilityfuctions';
@@ -67,6 +68,20 @@ const HomeScreen = ({navigation}) => {
 
         {/* <CircularSlider /> */}
         {/* <MaskedText></MaskedText> */}
+        {/* <View style={{alignItems: 'center'}}>
+          <Text>Earn Upto</Text>
+          <Text>$2000</Text>
+          <View style={{width: '100%', height: '100%', position: 'absolute'}}>
+            <BGSvg>
+              <View></View>
+            </BGSvg>
+          </View>
+        </View> */}
+
+        {/* <BGSvg> */}
+
+        {/* </BGSvg> */}
+        {/* </View> */}
         <RatingSlider />
         <SliderSvg />
         <View>
