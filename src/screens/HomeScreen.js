@@ -33,25 +33,7 @@ const HomeScreen = ({navigation}) => {
   return (
     <>
       <SafeAreaView />
-      <Animated.ScrollView
-      // contentInsetAdjustmentBehavior="automatic"
-      // scrollEventThrottle={16}
-      // onScroll={e => {
-      //   backgroundAnimated.setValue(e.nativeEvent.contentOffset.y);
-      // }}
-      // onScroll={Animated.event(
-      //   [
-      //     {
-      //       nativeEvent: {
-      //         contentOffset: {
-      //           y: backgroundAnimated,
-      //         },
-      //       },
-      //     },
-      //   ],
-      //   {useNativeDriver: true},
-      // )}
-      >
+      <Animated.ScrollView>
         <View>
           <Text>Hello World</Text>
           <Text>Yayyy!!!</Text>
@@ -68,15 +50,6 @@ const HomeScreen = ({navigation}) => {
 
         {/* <CircularSlider /> */}
         {/* <MaskedText></MaskedText> */}
-        {/* <View style={{alignItems: 'center'}}>
-          <Text>Earn Upto</Text>
-          <Text>$2000</Text>
-          <View style={{width: '100%', height: '100%', position: 'absolute'}}>
-            <BGSvg>
-              <View></View>
-            </BGSvg>
-          </View>
-        </View> */}
 
         {/* <BGSvg> */}
 
