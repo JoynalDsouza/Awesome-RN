@@ -3,7 +3,6 @@ import {View, Text, PanResponder, Animated, StyleSheet} from 'react-native';
 
 const Slider = () => {
   const [containerWidth, setContainerWidth] = useState(0);
-  // const containerHeight = 411;
   const containerWidthRef = useRef(containerWidth);
   const pan = useState(new Animated.ValueXY())[0];
 
@@ -19,27 +18,7 @@ const Slider = () => {
         });
       },
       onMoveShouldSetPanResponder: (evt, gestureState) => true,
-      //   onPanResponderMove: (event, gestureState) => {
-      //     const {dx, dy} = gestureState;
-      //     // console.log(dx);
-      //     // console.log(containerWidthRef.current);
-      //     const {x, y} = pan.__getValue();
-      //     let nextX = x + dx;
 
-      //     if (nextX < 0) {
-      //       nextX = 0;
-      //     } else if (nextX > containerWidthRef.current - 50) {
-      //       nextX = containerWidthRef.current - 50;
-      //     }
-
-      //     // if (nextY < 0) {
-      //     //   nextY = 0;
-      //     // } else if (nextY > containerHeight - 50) {
-      //     //   nextY = containerHeight - 50;
-      //     // }
-
-      //     pan.setValue({x: nextX, y: 0});
-      //   },
       onPanResponderMove: Animated.event(
         [
           null,
@@ -60,12 +39,6 @@ const Slider = () => {
     containerWidthRef.current = containerWidth;
   }, [containerWidth]);
 
-  // panResponder.onPanResponderMove = (evt, gestureState) => {
-  //   console.log({ containerWidth });
-  // };
-
-  // const [panResponder, setPanResponder] = useState(pan);
-
   const backgroundColorInterpolate = pan.x.interpolate({
     inputRange: [0, 100, 200, 300, 400],
     outputRange: [
@@ -84,7 +57,6 @@ const Slider = () => {
         style={{
           width: '100%',
           height: 50,
-          // backgroundColor: "gray",
           position: 'relative',
           zIndex: 2,
         }}
