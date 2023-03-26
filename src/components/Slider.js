@@ -6,8 +6,6 @@ const Slider = () => {
   const containerWidthRef = useRef(containerWidth);
   const pan = useState(new Animated.ValueXY())[0];
 
-  // const containerCheck = (val)
-
   const panResponder = useState(
     PanResponder.create({
       onStartShouldSetPanResponder: () => true,

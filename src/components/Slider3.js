@@ -137,7 +137,6 @@ export const FeedbackModalize = ({feedbackModalizeRef, userData = {}}) => {
               {
                 width: 60,
                 height: 60,
-                // backgroundColor: backgroundColorInterpolate,
                 justifyContent: 'center',
                 alignItems: 'center',
                 flexDirection: 'row',
@@ -147,35 +146,6 @@ export const FeedbackModalize = ({feedbackModalizeRef, userData = {}}) => {
               },
             ]}
             {...panResponder.panHandlers}>
-            {/* <Animated.View
-              style={{
-                backgroundColor: sliderClicked
-                  ? backgroundColorInterpolate
-                  : 'rgba(244, 244, 244, 0.7)',
-                height: 48,
-                width: 48,
-                borderRadius: 24,
-                flexDirection: 'row',
-                justifyContent: 'center',
-                alignItems: 'center',
-              }}>
-              <PlaceHolderRateMarks
-                height={22}
-                width={3}
-                style={{opacity: 1}}></PlaceHolderRateMarks>
-              <PlaceHolderRateMarks
-                height={22}
-                width={3}
-                style={{
-                  marginHorizontal: 4,
-                  opacity: 1,
-                }}></PlaceHolderRateMarks>
-
-              <PlaceHolderRateMarks
-                height={22}
-                width={3}
-                style={{opacity: 1}}></PlaceHolderRateMarks>
-            </Animated.View> */}
             <SliderSvg fillColor={backgroundColorInterpolate} />
           </Animated.View>
         </Animated.View>
