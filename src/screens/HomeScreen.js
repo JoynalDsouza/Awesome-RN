@@ -29,7 +29,6 @@ const HomeScreen = ({navigation}) => {
     inputRange: [0, 3000],
     outputRange: ['rgb(145,34,26)', 'rgb(234,234,23)'],
   });
-  // const backgroundColor = 'red';
   return (
     <>
       <SafeAreaView />
