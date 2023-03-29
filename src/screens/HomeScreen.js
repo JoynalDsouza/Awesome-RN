@@ -45,15 +45,6 @@ const HomeScreen = ({navigation}) => {
           />
         </View>
 
-        {/* <Slider /> */}
-
-        {/* <CircularSlider /> */}
-        {/* <MaskedText></MaskedText> */}
-
-        {/* <BGSvg> */}
-
-        {/* </BGSvg> */}
-        {/* </View> */}
         <RatingSlider />
         <SliderSvg />
         <View>
