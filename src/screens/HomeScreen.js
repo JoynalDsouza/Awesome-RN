@@ -11,13 +11,10 @@ import {
   Animated,
 } from 'react-native';
 import RollingNumberTicker from 'react-native-rolling-number-ticker';
-import Ball from '../components/Ball';
-import CircularSlider from '../components/CircularSlider';
-import Slider from '../components/Slider';
+
 import {RatingSlider} from '../components/Slider2';
 import SliderX from '../components/SliderX';
-import BGSvg from '../components/svg/BGSvg';
-import MaskedText from '../components/svg/MaskedText';
+
 import SliderSvg from '../components/svg/SliderSvg';
 import {formatIndianCurrency} from '../utils/utilityfuctions';
 
