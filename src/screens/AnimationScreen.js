@@ -29,22 +29,6 @@ const AnimationScreen = () => {
       onMoveShouldSetPanResponder: (evt, gestureState) => true,
       onPanResponderMove: (event, gestureState) => {
         const {dx, dy} = gestureState;
-        // console.log(dx);
-        // console.log(containerWidthRef.current);
-        // const {x, y} = pan.__getValue();
-        // let nextX = x + dx;
-
-        // if (nextX < 0) {
-        //   nextX = 0;
-        // } else if (nextX > containerWidthRef.current - 50) {
-        //   nextX = containerWidthRef.current - 50;
-        // }
-
-        // if (nextY < 0) {
-        //   nextY = 0;
-        // } else if (nextY > containerHeight - 50) {
-        //   nextY = containerHeight - 50;
-        // }
 
         pan.setValue({x: dx, y: 0});
       },
