@@ -7,8 +7,6 @@ import SliderSvg from '../components/svg/SliderSvg';
 // import Ball from '../components/Ball';
 
 const AnimationScreen = () => {
-  //  const moveBall = useRef(new Animated.ValueXY(0, 0)).current;
-
   const [containerWidth, setContainerWidth] = useState(0);
   // const containerHeight = 411;
   const containerWidthRef = useRef(containerWidth);
@@ -64,12 +62,6 @@ const AnimationScreen = () => {
   React.useEffect(() => {
     containerWidthRef.current = containerWidth;
   }, [containerWidth]);
-
-  // panResponder.onPanResponderMove = (evt, gestureState) => {
-  //   console.log({ containerWidth });
-  // };
-
-  // const [panResponder, setPanResponder] = useState(pan);
 
   const DATA = [
     {
