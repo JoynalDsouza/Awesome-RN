@@ -161,14 +161,12 @@ const AnimationScreen = () => {
           style={{
             width: '100%',
             height: 50,
-            // backgroundColor: "gray",
             position: 'relative',
             zIndex: 2,
           }}
           onLayout={e => {
             const {width} = e.nativeEvent.layout;
             setContainerWidth(width);
-            // console.log({ width });
           }}>
           <Animated.View
             style={[
