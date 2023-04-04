@@ -30,16 +30,7 @@ const AnimationScreen = () => {
 
         pan.setValue({x: dx, y: 0});
       },
-      // onPanResponderMove: Animated.event(
-      //   [
-      //     null,
-      //     {
-      //       dx: pan.x,
-      //       dy: pan.y,
-      //     },
-      //   ],
-      //   {useNativeDriver: false},
-      // ),
+
       onPanResponderRelease: () => {
         const {x, y} = pan.__getValue();
         console.log(x);
