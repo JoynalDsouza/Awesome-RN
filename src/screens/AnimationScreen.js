@@ -4,16 +4,12 @@ import Deck from '../components/Deck';
 import Slider from '../components/Slider';
 import {FeedbackModalize} from '../components/Slider3';
 import SliderSvg from '../components/svg/SliderSvg';
-// import Ball from '../components/Ball';
 
 const AnimationScreen = () => {
   const [containerWidth, setContainerWidth] = useState(0);
-  // const containerHeight = 411;
   const containerWidthRef = useRef(containerWidth);
   const pan = useState(new Animated.ValueXY())[0];
   const [rating, setRating] = useState(1);
-
-  // const containerCheck = (val)
 
   const panResponder = useState(
     PanResponder.create({
